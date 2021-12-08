@@ -23,7 +23,8 @@ Kelompok T02
 ## Soal A
 Tugas pertama kalian yaitu membuat topologi jaringan sesuai dengan rancangan yang diberikan Luffy dibawah ini:
 
-<img src="" width="500">
+<img src="https://user-images.githubusercontent.com/73151892/145213179-2eb2f5da-6ded-4f6b-9851-43fffb2ddc4c.png">
+
 
 Keterangan : 
 
@@ -41,23 +42,26 @@ Karena kalian telah belajar subnetting dan routing, Luffy ingin meminta kalian u
 Setelah membuat topologi seperti pada soal A, kami melakukan subnetting dengan metode CIDR, dan Prefix IP yang digunakan yaitu 192.212.0.0
 
 1. Menentukan pembagian subnet dan melakukan labeling di setiap subnetnya. Diperoleh subnet A1-A8 sseperti pada gambar berikut
-   
+   <img src="https://user-images.githubusercontent.com/73151892/145214037-f892559f-c3ea-407a-8691-83a5797a1305.png">
 2. Kemudian menggabungkan subnet A yang paling jauh dari router dengan label subnet B
-
+   
 3. Selanjutnya melakukan labeling subnet C
-
+   <img src="https://user-images.githubusercontent.com/73151892/145214542-eb9bb64f-cde6-4045-aa79-de7cbc41f5a6.png">
 4. Melakukan labeling subnet D
 
 5. Melakukan labeling subnet E
+   <img src="https://user-images.githubusercontent.com/73151892/145214883-343064e0-5cd0-4593-98ea-9464987ac434.png">
 
 Setelah memberi label subnet, selanjutnya melakukan pembagian IP dengan menggunakan tree
 1. Sebelum membagi IP menggunakan tree, terlebih dahulu menghitung jumlah host pada subnet A untuk menentukan netmasknya, dan diperoleh hasil sebagai berikut :
-
+   <img src="https://user-images.githubusercontent.com/73151892/145215014-5615a535-6437-4047-b47e-3986985a0791.png">
 2. Selanjutnya menentukan netmask untuk subnet B, C, D, dan E
-
+   <img src="https://user-images.githubusercontent.com/73151892/145215187-4fe09e5f-e8e1-4a64-a8ef-b582f898558e.png">
 3. Kemudian melakukan pembagian IP menggunakan tree sesuai dengan netmask yang telah ditentukan sebelumnya. 
-
+   <img src="https://user-images.githubusercontent.com/73151892/145215639-1e80d32d-0019-416e-96cf-fa69e5194d88.png">
 4. Dari tree tersebut diperoleh NID tiap subnet, sehingga dapat ditentukan pula broadcast addressnya.
+   <img src="https://user-images.githubusercontent.com/73151892/145215795-a272fcd9-0a35-4407-ac21-3b490249c127.png">
+   
 ## Soal C
 ## Soal D
 ## Soal 1
