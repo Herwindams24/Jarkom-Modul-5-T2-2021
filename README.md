@@ -42,6 +42,7 @@ Karena kalian telah belajar subnetting dan routing, Luffy ingin meminta kalian u
 Setelah membuat topologi seperti pada soal A, kami melakukan subnetting dengan metode CIDR, dan Prefix IP yang digunakan yaitu 192.212.0.0
 
 1. Menentukan pembagian subnet dan melakukan labeling di setiap subnetnya. Diperoleh subnet A1-A8 sseperti pada gambar berikut
+
    <img src="https://user-images.githubusercontent.com/73151892/145214037-f892559f-c3ea-407a-8691-83a5797a1305.png">
 2. Kemudian menggabungkan subnet A yang paling jauh dari router dengan label subnet B
    
@@ -54,6 +55,7 @@ Setelah membuat topologi seperti pada soal A, kami melakukan subnetting dengan m
 
 Setelah memberi label subnet, selanjutnya melakukan pembagian IP dengan menggunakan tree
 1. Sebelum membagi IP menggunakan tree, terlebih dahulu menghitung jumlah host pada subnet A untuk menentukan netmasknya, dan diperoleh hasil sebagai berikut :
+
    <img src="https://user-images.githubusercontent.com/73151892/145215014-5615a535-6437-4047-b47e-3986985a0791.png">
 2. Selanjutnya menentukan netmask untuk subnet B, C, D, dan E
    <img src="https://user-images.githubusercontent.com/73151892/145215187-4fe09e5f-e8e1-4a64-a8ef-b582f898558e.png">
