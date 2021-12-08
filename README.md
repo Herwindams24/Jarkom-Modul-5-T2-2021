@@ -9,12 +9,58 @@ Kelompok T02
 
 ## Tabel Soal
 
-* [Konfigurasi A](#konfigurasi-a)
-* [Konfigurasi B]
+* [Soal A](#soal-a)
+* [Soal B](#soal-b)
+* [Soal C](#soal-c)
+* [Soal D](#soal-d)
+* [Soal 1](#soal-1)
+* [Soal 2](#soal-2)
+* [Soal 3](#soal-3)
+* [Soal 4](#soal-4)
+* [Soal 5](#soal-5)
+* [Soal 6](#soal-6)
 
+## Soal A
+Tugas pertama kalian yaitu membuat topologi jaringan sesuai dengan rancangan yang diberikan Luffy dibawah ini:
+
+<img src="" width="500">
+
+Keterangan : 
+
+* Doriki adalah DNS Server
+* Jipangu adalah DHCP Server
+* Maingate dan Jorge adalah Web Server
+* Jumlah Host pada Blueno adalah 100 host
+* Jumlah Host pada Cipher adalah 700 host
+* Jumlah Host pada Elena adalah 300 host
+* Jumlah Host pada Fukurou adalah 200 host
+
+## Soal B
+Karena kalian telah belajar subnetting dan routing, Luffy ingin meminta kalian untuk membuat topologi tersebut menggunakan teknik CIDR atau VLSM.
+
+Setelah membuat topologi seperti pada soal A, kami melakukan subnetting dengan metode CIDR, dan Prefix IP yang digunakan yaitu 192.212.0.0
+
+1. Menentukan pembagian subnet dan melakukan labeling di setiap subnetnya. Diperoleh subnet A1-A8 sseperti pada gambar berikut
+   
+2. Kemudian menggabungkan subnet A yang paling jauh dari router dengan label subnet B
+
+3. Selanjutnya melakukan labeling subnet C
+
+4. Melakukan labeling subnet D
+
+5. Melakukan labeling subnet E
+
+Setelah memberi label subnet, selanjutnya melakukan pembagian IP dengan menggunakan tree
+1. Sebelum membagi IP menggunakan tree, terlebih dahulu menghitung jumlah host pada subnet A untuk menentukan netmasknya, dan diperoleh hasil sebagai berikut :
+
+2. Selanjutnya menentukan netmask untuk subnet B, C, D, dan E
+
+3. Kemudian melakukan pembagian IP menggunakan tree sesuai dengan netmask yang telah ditentukan sebelumnya. 
+
+4. Dari tree tersebut diperoleh NID tiap subnet, sehingga dapat ditentukan pula broadcast addressnya.
+## Soal C
+## Soal D
 ## Soal 1
-
-
 
 ## Konfigurasi Network pada GNS3
 
