@@ -24,19 +24,19 @@ Kelompok T02
 
      Pertama-tama, penulis menghubungkan router Foosha melalui eth0 menuju NAT dengan DHCP.
 
-         <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Foosha.png" width="500">
+       <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Foosha.png" width="500" height="400">
 
    * Pada Water7
 
-         <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Water%207%201.png" width="500">
+       <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Water%207%201.png" width="500" height="400">
          
-         <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Water%207%202.png" width="500">
+       <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Water%207%202.png" width="500" height="400">
 
    * Pada Guanhao
 
-         <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Guanhao%201.png" width="500">
+       <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Guanhao%201.png" width="500" height="400">
          
-         <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Guanhao%202.png" width="500">
+       <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Guanhao%202.png" width="500" height="400">
 
 2. Pada DNS Server (DORIKI)
    
