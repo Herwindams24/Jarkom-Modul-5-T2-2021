@@ -161,7 +161,7 @@ Lakukan Routing agar setiap perangkat pada jaringan tersebut terhubung.
 
 Pada persiapan D, penulis diminta untuk `memberikan ip` pada subnet Blueno, Cipher, Fukurou, dan Elena secara `dinamis` menggunakan bantuan `DHCP server`. Sekaligus melakukan setting DHCP Relay pada router yang menghubungkannya.
 
-1. Penulis perlu melakukan network configuration seperti pada tahap [Soal B](#soal-b),
+1. Penulis perlu melakukan network configuration seperti pada tahap [Soal B](#soal-b)
 2. Konfigurasi pada DHCP Server tepatnya di Jipangu sebagai berikut:
    ```
    
@@ -175,9 +175,158 @@ Pada persiapan D, penulis diminta untuk `memberikan ip` pada subnet Blueno, Ciph
      echo 'INTERFACES="eth0"' > /etc/default/isc-dhcp-server
      
    ```
-4. Lalu pembagian IP DHCP untuk Client (Blueno, Cipher, Elena, dan Fukurou) di Jipangu sebagai berikut
-5. Selanjutnya untuk distribusi IP DHCP kepada Client (Blueno, Cipher, Elena, dan Fukurou) tersampaikan dari Jipangu atau DHCP Server, maka kita memerlukan pengaturan konfigurasi DHCP Relay pada Router Water7 dan Guanhao seperti berikut:
+3. Konfigurasikan Forwarders Internet pada DNS Server agar dapat tersambung ke internet, sebagai berikut:
+
+        ```
+        echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+        apt-get update
+        apt-get install nano
+        apt-get install isc-dhcp-server
+        dhcpd --version
+
+        ## pemilihan interfaces
+        echo 'INTERFACES="eth0"' > /etc/default/isc-dhcp-server
+        ```
+
+4. Lalu pembagian IP DHCP untuk Client (Blueno, Cipher, Elena, dan Fukurou) di Jipangu sebagai berikut:
+
+    * Deklarasi subnet A1 yang mana tidak harus memiliki settingan DHCP.
+  
+        ```
+        ## Subnet A1 DORIKI dan JIPANGU
+        echo '
+            subnet 192.212.4.0 netmask 255.255.255.248{}
+        ```
+
+    * Pada subnet A2 diberikan pengaturan sesuai dengan NID, netmask, range, broadcast address, dan dns server.  
+  
+        ```
+        ## Subnet A2 BLUENO
+        subnet 192.212.8.0  netmask 255.255.255.128 {
+            range 192.212.8.2 192.212.8.3;
+            option routers 192.212.8.1;
+            option broadcast-address 192.212.8.127;
+            option domain-name-servers 192.212.4.3;
+            default-lease-time 600;
+            max-lease-time 7200;
+        }' > /etc/dhcp/dhcpd.conf
+        ```
+
+    * Pada subnet A3 diberikan pengaturan sesuai dengan NID, netmask, range, broadcast address, dan dns server. 
+
+        ```
+        ## Subnet A3 CIPHER
+        echo '
+            subnet 192.212.0.0  netmask 255.255.252.0 {
+            range 192.212.0.2 192.212.0.3;
+            option routers 192.212.0.1;
+            option broadcast-address 192.212.3.255;
+            option domain-name-servers 192.212.4.3;
+            default-lease-time 600;
+            max-lease-time 7200;
+            }' >> /etc/dhcp/dhcpd.conf
+        ```
+
+    * Pada subnet A6 diberikan pengaturan sesuai dengan NID, netmask, range, broadcast address, dan dns server. 
+
+        ```
+        ## Subnet A6 ELENA
+        echo '
+            subnet 192.212.34.0  netmask 255.255.254.0 {
+            range 192.212.34.2 192.212.34.10;
+            option routers 192.212.34.1;
+            option broadcast-address 192.212.35.255;
+            option domain-name-servers 192.212.4.3;
+            default-lease-time 600;
+        ```
+
+    * Pada subnet A7 diberikan pengaturan sesuai dengan NID, netmask, range, broadcast address, dan dns server. 
+
+        ```
+        ## Subnet A7 FUKUROU
+        echo '
+            subnet 192.212.32.0  netmask 255.255.255.0 {
+            range 192.212.32.2 192.212.32.10;
+            option routers 192.212.32.1;
+            option broadcast-address 192.212.32.255;
+            option domain-name-servers 192.212.4.3;
+            default-lease-time 600;
+            max-lease-time 7200;
+        }' >> /etc/dhcp/dhcpd.conf
+        ```
+
+5. Konfigurasikan DHCP Relay pada Router Water7 dan Guanhao seperti berikut:
+   
+   * Water 7
+  
+     <img src="" width="300">
+
+   * Guanhao
+
+     <img src="" width="300">
 
 ## Soal 1
 
+Konfigurasi Foosha menggunakan iptables, tetapi Luffy tidak ingin menggunakan MASQUERADE.
+
+**Jawab**
+
+1. List iptables rules menggunakan syntax:
+
+    ```
+    iptables -t nat -v -L -n --line-number
+    ```
+
+    Di mana,
+    
+    * ` -t nat` : Nat table yang dipilih
+    * `-v` : Verbose output
+    * `-L` : Daftar semua aturan dalam chain yang dipilih atau tampilkan semua aturan di tabel nat
+    * `-n` : Keluaran numerik (Alamat IP dan nomor port akan dicetak dalam format numerik, bukan nama DNS. Ini akan mempercepat aturan daftar)
+    * `--line-number` : Saat membuat daftar rules, tambahkan nomor baris ke awal setiap rules, sesuai dengan posisi rules dalam chain
+
+2. Linux IPtables menghapus aturan rules nat postrouting
+3. List iptables rules kembali untuk memastikan bahwa rules tersebut berhasil terhapus
+4. Ubah network configuration Foosha, sebagai berikut:
+   
+    ```
+    echo '
+    auto eth0
+    iface eth0 inet dhcp 
+    
+    auto eth1
+    iface eth1 inet static
+        address 192.212.16.1
+        netmask 255.255.255.252
+        broadcast 192.212.16.3 
+    
+    auto eth2
+    iface eth2 inet static
+        address 192.212.36.1
+        netmask 255.255.255.252
+        broadcast 192.212.36.3
+
+    ' > /etc/network/interfaces
+    ```
+
+5. Simpan address `192.168.122` ke dalam variable `ip_eth0_foosha` dengan syntax:
+
+    ```
+    ip_eth0_foosha=$(hostname -I | awk 'BEGIN{RS=" "} {print}' | grep '192.168.122')
+    ```
+
+6. Kita menggunakan -t nat NAT Table pada -A POSTROUTING POSTROUTING chain untuk -j SNAT dengan source address 192.212.0.0/18
+
+    ```
+    iptables -t nat -A POSTROUTING -s 192.212.0.0/18 -o eth0 -j SNAT --to-source $ip_eth0_foosha
+    ```
+
+7. List iptables rules kembali untuk memastikan bahwa rules tersebut berhasil tertambahkan
+
+    ```
+    iptables -t nat -v -L -n --line-number
+    ```
+
+**Dokumentasi Uji Coba**
+Uji coba dilakukan di Foosha dan Blueno dengan melakukan ping google.com
 
