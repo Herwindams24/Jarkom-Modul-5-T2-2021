@@ -332,3 +332,80 @@ Konfigurasi Foosha menggunakan iptables, tetapi Luffy tidak ingin menggunakan MA
 Uji coba dilakukan di Foosha dan Blueno dengan melakukan ping google.com
 
 <img src="" width="300">
+
+
+## Soal 2
+
+**Soal**
+
+Kalian diminta untuk mendrop semua akses HTTP dari luar Topologi kalian pada server yang merupakan DHCP Server dan DNS Server demi menjaga keamanan.
+
+**Jawab**
+
+Gunakan syntax iptables sebagai berikut:
+
+```
+iptables -A FORWARD -d 192.212.4.0/29 -i eth0 -p tcp -m tcp --dport 80 -j DROP
+```
+
+Di mana,
+* IP pertama -d merupakan IP NID untuk subnet A1 dikarenakan terdapat DHCP Server (Jipangu) dan DNS Server (Doriki)
+
+
+**Dokumentasi Uji Coba**
+
+* Dokumentasi Syntax
+  
+    <img src="https://user-images.githubusercontent.com/57980125/145432596-34877541-9704-4edd-a832-d0ca5c6aed14.png" width="500">
+
+* Dokumentasi Uji Coba
+
+Lakukan nmap -p 80 [IP Doriki/IP Jipangu] di Client Elena dan Fukurou
+
+```
+nmap -p 80 10.46.4.2
+nmap -p 80 10.46.4.3
+```
+
+<img src="" width="500">
+
+
+## Soal 3
+
+**Soal**
+
+Batasi DHCP dan DNS Server hanya boleh menerima maksimal 3 koneksi ICMP secara bersamaan menggunakan iptables, selebihnya didrop.
+
+**Jawab**
+
+Gunakan syntax iptables sebagai berikut pada Jipangu maupun Doriki:
+
+```
+iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -sk 0 -j DROP
+```
+
+Di mana,
+
+*  `-A INPUT` INPUT chain untuk menyaring paket 
+*  Protokol ICMP`-p icmp` merupakan protokol yang membatasi paket yang masuk 
+*  `-m connlimit --connlimit-above 3` berarti hanya ada maksimal 3 koneksi saja 
+*  `--connlimit-mask 0` berarti dapat bebas berasal darimana saja
+*  `-j DROP` selebihnya akan di DROP
+
+
+**Dokumentasi Uji Coba**
+
+* Dokumentasi Syntax
+  
+    <img src="https://user-images.githubusercontent.com/57980125/145432522-d1eceda3-9643-4078-8af4-123ffe38d41d.png" width="500">
+
+* Dokumentasi Uji Coba
+
+Lakukan ping ke IP milik Doriki/Jipangu pada 4 node yang berbeda. Di mana nantinya, hanya akan ada 3 node (node kesatu - ketiga) yang dapat melakukan ping, sisanya yaitu node ke-4 tidak akan bisa melakukan ping.
+
+```
+ping 192.212.4.2
+ping 192.212.4.3
+```
+
+<img src="" width="500">
