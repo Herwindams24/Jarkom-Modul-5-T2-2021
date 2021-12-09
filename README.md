@@ -259,11 +259,11 @@ Pada persiapan D, penulis diminta untuk `memberikan ip` pada subnet Blueno, Ciph
    
    * Water 7
   
-     <img src="" width="300">
+     <img src="https://user-images.githubusercontent.com/57980125/145427903-a5f2aa8c-a44e-47b0-9f27-c651e478eb6b.png" width="500">
 
    * Guanhao
 
-     <img src="" width="300">
+     <img src="https://user-images.githubusercontent.com/57980125/145428001-c5ec63e3-415a-40ca-8bb4-837339403683.png" width="500">
 
 ## Soal 1
 
@@ -328,5 +328,7 @@ Konfigurasi Foosha menggunakan iptables, tetapi Luffy tidak ingin menggunakan MA
     ```
 
 **Dokumentasi Uji Coba**
+
 Uji coba dilakukan di Foosha dan Blueno dengan melakukan ping google.com
 
+<img src="" width="300">
