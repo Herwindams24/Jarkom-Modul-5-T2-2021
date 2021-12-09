@@ -63,10 +63,6 @@ Setelah memberi label subnet, selanjutnya melakukan pembagian IP dengan mengguna
    <img src="https://user-images.githubusercontent.com/73151892/145215639-1e80d32d-0019-416e-96cf-fa69e5194d88.png">
 4. Dari tree tersebut diperoleh NID tiap subnet, sehingga dapat ditentukan pula broadcast addressnya.
    <img src="https://user-images.githubusercontent.com/73151892/145215795-a272fcd9-0a35-4407-ac21-3b490249c127.png">
-   
-## Soal C
-## Soal D
-## Soal 1
 
 ## Konfigurasi Network pada GNS3
 
@@ -125,8 +121,8 @@ Setelah memberi label subnet, selanjutnya melakukan pembagian IP dengan mengguna
     * Pada Maingate
     
       <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/Konfigurasi%20Network/Konfigurasi%20Maingate.png" width="300">
-      
-## Konfigurasi C
+
+## Soal C
 
 Lakukan Routing agar setiap perangkat pada jaringan tersebut terhubung.
 
@@ -155,10 +151,33 @@ Lakukan Routing agar setiap perangkat pada jaringan tersebut terhubung.
 
 * Routing pada Router Water7 sebagai berikut
 
- ```
- ```
+  <img src="https://user-images.githubusercontent.com/57980125/145408084-6b91ab64-78e5-4a3d-ada1-d0c65a7250da.png" width="400">
 
 * Routing pada Router Guanhao sebagai berikut
   
-  ```
-  ```
+  <img src="https://user-images.githubusercontent.com/57980125/145407879-351c6a9b-2671-4a8c-bb6d-184ccf5aa7fd.png" width="400">
+
+## Soal D
+
+Pada persiapan D, penulis diminta untuk `memberikan ip` pada subnet Blueno, Cipher, Fukurou, dan Elena secara `dinamis` menggunakan bantuan `DHCP server`. Sekaligus melakukan setting DHCP Relay pada router yang menghubungkannya.
+
+1. Penulis perlu melakukan network configuration seperti pada tahap [Soal B](#soal-b),
+2. Konfigurasi pada DHCP Server tepatnya di Jipangu sebagai berikut:
+   ```
+   
+     echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+     apt-get update
+     apt-get install nano
+     apt-get install isc-dhcp-server
+     dhcpd --version
+
+     ## pemilihan interfaces
+     echo 'INTERFACES="eth0"' > /etc/default/isc-dhcp-server
+     
+   ```
+4. Lalu pembagian IP DHCP untuk Client (Blueno, Cipher, Elena, dan Fukurou) di Jipangu sebagai berikut
+5. Selanjutnya untuk distribusi IP DHCP kepada Client (Blueno, Cipher, Elena, dan Fukurou) tersampaikan dari Jipangu atau DHCP Server, maka kita memerlukan pengaturan konfigurasi DHCP Relay pada Router Water7 dan Guanhao seperti berikut:
+
+## Soal 1
+
+
