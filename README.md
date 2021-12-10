@@ -420,6 +420,8 @@ Akses dari subnet Blueno dan Cipher hanya diperbolehkan pada pukul 07.00 - 15.00
 
 Pada Doriki jalankan syntax di bawah ini:
 
+<img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_LfWWKqN0NM.png?raw=true" width="500">
+
 ```
 ### Blueno
 # Blueno batas hari tidak aktif
@@ -461,6 +463,8 @@ Akses dari subnet Elena dan Fukuro hanya diperbolehkan pada pukul 15.01 hingga p
 **Jawab**
 
 Pada Doriki jalankan syntax di bawah ini:
+
+<img src='https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_1K9dOz9sWQ.png?raw=true' width='500'>
 
 ```
 ###=================== Nomer 5 Batas Akses Elena dan Fukurou ================###
