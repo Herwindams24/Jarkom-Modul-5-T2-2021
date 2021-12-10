@@ -409,3 +409,142 @@ ping 192.212.4.3
 ```
 
 <img src="" width="500">
+
+## No 4
+
+**Soal**
+
+Akses dari subnet Blueno dan Cipher hanya diperbolehkan pada pukul 07.00 - 15.00 pada hari Senin sampai Kamis.
+
+**Jawab**
+
+Pada Doriki jalankan syntax di bawah ini:
+
+```
+### Blueno
+# Blueno batas hari tidak aktif
+iptables -A INPUT -s 192.212.8.0/25 -m time --weekdays Fri,Sat,Sun -j REJECT
+# Blueno batas jamnya
+iptables -A INPUT -s 192.212.8.0/25 -m time --timestart 00:00 --timestop 06:59 --weekdays Mon,Tue,Wed,Thu -j REJECT
+iptables -A INPUT -s 192.212.8.0/25 -m time --timestart 15:01 --timestop 23:59 --weekdays Mon,Tue,Wed,Thu -j REJECT
+
+### Cipher
+# Cipher batas hari tidak aktif
+iptables -A INPUT -s 192.212.0.0/22 -m time --weekdays Fri,Sat,Sun -j REJECT
+# Cipher batas jamnya
+iptables -A INPUT -s 192.212.0.0/22 -m time --timestart 00:00 --timestop 06:59 --weekdays Mon,Tue,Wed,Thu -j REJECT
+iptables -A INPUT -s 192.212.0.0/22 -m time --timestart 15:01 --timestop 23:59 --weekdays Mon,Tue,Wed,Thu -j REJECT
+```
+
+Di mana...
+
+**Dokumentasi Uji Coba**
+
+1. Pada Cipher lakukan ping ke IP Doriki 
+   
+2. <img src="" width="500">
+
+3. Jika di dalam range waktu maka akan tampil seperti gambar di bawah ini:
+
+<img src="" width="500">
+
+4. Gunakan command di bawah ini jika ingin mengatur waktu linux
+
+```date --set="2021-12-04 20:00:00.00"```
+
+## No 5
+
+**Soal**
+
+Akses dari subnet Elena dan Fukuro hanya diperbolehkan pada pukul 15.01 hingga pukul 06.59 setiap harinya. Selain itu direject.
+
+**Jawab**
+
+Pada Doriki jalankan syntax di bawah ini:
+
+```
+###=================== Nomer 5 Batas Akses Elena dan Fukurou ================###
+# Elena batas waktu
+iptables -A INPUT -s 192.212.34.0/23 -m time --timestart 06:59 --timestop 15:01 -j REJECT
+# Fukurou batas waktu
+iptables -A INPUT -s 192.212.32.0/24 -m time --timestart 06:59 --timestop 15:01 -j REJECT
+###=================== Nomer 5 Batas Akses Elena dan Fukurou ================###
+```
+
+Di mana...
+
+**Dokumentasi Uji Coba**
+
+1. Pada Elena lakukan ping ke IP Doriki, jika di luar waktu yang ditentukan akan tampil seperti gambar di bawah ini:
+   
+<img src="" width="500">
+
+2. Jika di dalam range waktu maka akan tampil seperti gambar di bawah ini:
+
+<img src="" width="500">
+
+3. Gunakan command di bawah ini jika ingin mengatur waktu linux
+
+```Date --set="2021-12-04 14:00:00.00```
+
+
+## No 06
+
+**Soal**
+Karena kita memiliki 2 Web Server, Luffy ingin Guanhao disetting sehingga setiap request dari client yang mengakses DNS Server akan didistribusikan secara bergantian pada Jorge dan Maingate
+
+**Jawab**
+
+Pada nomor 6 ini, penulis menggunakan konsep load balancing. Di mana load balancing ini berfungsi untuk mendistribusikan pada webserver, sehingga beban yang dipikul oleh server tidak terlalu berat dan hasilnya lebih cepat.
+
+1. Pada Guanhao lakukan Redirect Request dengan syntax berikut ini:
+
+```
+###====================== Nomor 6 Request diredirect ========================###
+
+iptables -A PREROUTING -t nat -d 192.212.4.3 -p tcp --dport 80 -m statistic --m$
+iptables -A PREROUTING -t nat -d 192.212.4.3 -p tcp --dport 80 -j DNAT --to-des$
+iptables -t nat -A POSTROUTING -p tcp -d 192.212.33.3 --dport 80 -j SNAT --to-s$
+iptables -t nat -A POSTROUTING -p tcp -d 192.212.33.2 --dport 80 -j SNAT --to-s$
+
+###====================== Nomor 6 Request diredirect ========================###
+```
+
+<img src="" width="500">
+
+Di mana ...
+
+2. Lalu dikarenakan Maingate dan Jorge merupakan webserver, maka install apache  dan netcat, lalu start apache.
+   
+```
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+apt-get update
+apt-get install netcat -y
+apt-get install apache2 -y
+service apache2 start
+```
+
+**Dokumentasi Uji Coba**
+
+1. Jalankan script.sh di Fukurou atau Elena
+2. Pada node webserver (Maingate atau Jorge) ketikan syntax berikut ini:
+
+```
+nc -l -p 80
+```
+
+3. Pada Elena atau Fukurou ketikan command di bawah ini:
+
+```
+nc 10.46.4.2 80
+```
+
+Di mana 10.46.4.2 merupakan IP dari Jipangu (DHCP Server).
+
+4. Kemudian coba testing kirim pesan beberapa kata pada Client
+
+<img src="" width="500">
+
+5. Cek pada Maingate atau Jorge untuk lihat hasil load balancingnya
+
+<img src="" width="500">
