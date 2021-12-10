@@ -44,13 +44,11 @@ Setelah membuat topologi seperti pada soal A, kami melakukan subnetting dengan m
 1. Menentukan pembagian subnet dan melakukan labeling di setiap subnetnya. Diperoleh subnet A1-A8 sseperti pada gambar berikut
 
    <img src="https://user-images.githubusercontent.com/73151892/145214037-f892559f-c3ea-407a-8691-83a5797a1305.png">
-2. Kemudian menggabungkan subnet A yang paling jauh dari router dengan label subnet B
    
-3. Selanjutnya melakukan labeling subnet C
+2. Kemudian menggabungkan subnet A yang paling jauh dari router dengan label subnet B. Selanjutnya melakukan labeling subnet C.
    <img src="https://user-images.githubusercontent.com/73151892/145214542-eb9bb64f-cde6-4045-aa79-de7cbc41f5a6.png">
-4. Melakukan labeling subnet D
-
-5. Melakukan labeling subnet E
+   
+4. Kemudian labeling subnet C dan subnet E
    <img src="https://user-images.githubusercontent.com/73151892/145214883-343064e0-5cd0-4593-98ea-9464987ac434.png">
 
 Setelah memberi label subnet, selanjutnya melakukan pembagian IP dengan menggunakan tree
