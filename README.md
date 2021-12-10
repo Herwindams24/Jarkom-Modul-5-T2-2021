@@ -514,7 +514,7 @@ iptables -t nat -A POSTROUTING -p tcp -d 192.212.33.2 --dport 80 -j SNAT --to-s$
 ###====================== Nomor 6 Request diredirect ========================###
 ```
 
-<img src="" width="500">
+<img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_HLl5tyxNHs.png?raw=true" width="500">
 
 Di mana ...
 
