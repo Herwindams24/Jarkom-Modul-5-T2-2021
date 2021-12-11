@@ -386,11 +386,14 @@ Di mana,
 Lakukan nmap -p 80 [IP Doriki/IP Jipangu] di Client Elena dan Fukurou
 
 ```
-nmap -p 80 10.46.4.2
-nmap -p 80 10.46.4.3
+nmap -p 80 192.212.4.2
 ```
 
    <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_Kpfakpq9iy.png" width="500">
+   
+```
+nmap -p 80 192.212.4.3
+```
    
    <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_tTYHL6B4G5.png" width="500">
 
