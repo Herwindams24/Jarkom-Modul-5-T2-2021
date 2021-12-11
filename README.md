@@ -576,13 +576,13 @@ service apache2 start
 **Dokumentasi Uji Coba**
 
 1. Jalankan script.sh di Fukurou atau Elena
-2. Pada node webserver (Maingate atau Jorge) ketikan syntax berikut ini:
+2. Pada node webserver (Maingate atau Jorge) jalankan netcat dengan mode listen ke port 80 dengan syntax berikut ini:
 
 ```
 nc -l -p 80
 ```
 
-3. Pada Elena atau Fukurou ketikan command di bawah ini:
+3. Pada Elena atau Fukurou kita kirimkan paket ke Doriki lewat port 80 dengan command di bawah ini:
 
 ```
 nc 10.46.4.2 80
