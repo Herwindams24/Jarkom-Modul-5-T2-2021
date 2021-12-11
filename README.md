@@ -545,8 +545,12 @@ Di mana 10.46.4.2 merupakan IP dari Jipangu (DHCP Server).
 
 4. Kemudian coba testing kirim pesan beberapa kata pada Client
 
-<img src="" width="500">
+<img src="https://user-images.githubusercontent.com/57980125/145664088-62ff4d49-5d27-4d27-b056-ff122b8cf046.png" width="500">
+
+<img src="https://user-images.githubusercontent.com/57980125/145664119-7e6bc234-5b6c-45ed-9eb4-836a72876b93.png" width="500">
 
 5. Cek pada Maingate atau Jorge untuk lihat hasil load balancingnya
 
-<img src="" width="500">
+<img src="https://user-images.githubusercontent.com/57980125/145663924-8a076f7a-4629-4334-acb2-fd931ab3f419.png" width="500">
+
+<img src="https://user-images.githubusercontent.com/57980125/145663913-e85eae42-79b6-415e-b4fc-929f258405ba.png" width="500">
