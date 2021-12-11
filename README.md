@@ -611,14 +611,14 @@ nc -l -p 80
 3. Pada Elena atau Fukurou kita kirimkan paket ke Doriki lewat port 80 dengan command di bawah ini:
 
 ```
-nc 192.212.4.2 80
+nc 192.212.4.3 80
 ```
 
-Di mana 192.212.4.2 merupakan IP dari Jipangu (DHCP Server).
+Di mana 192.212.4.2 merupakan IP dari Jipangu (DHCP Server) dan 192.212.4.3 yang merupakan IP dari Doriki (DNS Server)
 
 4. Kemudian coba testing kirim pesan beberapa kata pada Client
 
-<img src="https://user-images.githubusercontent.com/57980125/145664088-62ff4d49-5d27-4d27-b056-ff122b8cf046.png" width="500">
+<img src="![image](https://user-images.githubusercontent.com/57520495/145680934-76f3abab-5413-4d1d-b599-c607e300d5fd.png)" width="500">
 
 <img src="https://user-images.githubusercontent.com/57980125/145664119-7e6bc234-5b6c-45ed-9eb4-836a72876b93.png" width="500">
 
