@@ -391,6 +391,8 @@ nmap -p 80 10.46.4.3
 ```
 
    <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_Kpfakpq9iy.png" width="500">
+   
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_tTYHL6B4G5.png" width="500">
 
 
 ## Soal 3
