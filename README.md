@@ -431,17 +431,38 @@ ping 192.212.4.2
 ping 192.212.4.3
 ```
 Ping ke Jipangu
-
+- Ping ke-1 (Berhasil)
+ 
  <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_gnzTZ7aqAv.png" width="500">
+ 
+- Ping ke-2 (Berhasil)
+
  <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_FQaqTnCKQ5.png" width="500">
+ 
+- Ping ke-3 (Berhasil) 
  <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_Ba8p5Vsx4c.png" width="500">
+ 
+- Ping ke-4 (Gagal)
+
  <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_TwpC1Z4II4.png" width="500">
+
 
 Ping ke Doriki
 
+- Ping ke-1 (Berhasil) 
+
  <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_GTteCUegDc.png" width="500">
+ 
+- Ping ke-2 (Berhasil)
+ 
  <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_9DI6ubxpwE.png" width="500">
+ 
+- Ping ke-3 (Berhasil)
+ 
  <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_VWnzqcHBX5.png" width="500">
+ 
+- Ping ke-4 (Gagal)
+ 
  <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_i6I88hKO8e.png" width="500">
  
 ## Soal 4
