@@ -7,6 +7,12 @@ Kelompok T02
 
 ---
 
+## Kendala
+
+**Tidak terdapat revisi pengerjaan**
+
+---
+
 ## Tabel Soal
 
 * [Soal A](#soal-a)
