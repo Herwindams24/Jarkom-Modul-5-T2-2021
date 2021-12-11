@@ -515,17 +515,23 @@ Pada nomor 6 ini, penulis menggunakan konsep load balancing. Di mana load balanc
 ```
 ###====================== Nomor 6 Request diredirect ========================###
 
-iptables -A PREROUTING -t nat -d 192.212.4.3 -p tcp --dport 80 -m statistic --m$
-iptables -A PREROUTING -t nat -d 192.212.4.3 -p tcp --dport 80 -j DNAT --to-des$
-iptables -t nat -A POSTROUTING -p tcp -d 192.212.33.3 --dport 80 -j SNAT --to-s$
-iptables -t nat -A POSTROUTING -p tcp -d 192.212.33.2 --dport 80 -j SNAT --to-s$
+iptables -A PREROUTING -t nat -d 192.212.4.3 -p tcp --dport 80 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.212.33.3:80
+iptables -A PREROUTING -t nat -d 192.212.4.3 -p tcp --dport 80 -j DNAT --to-destination 192.212.33.2:80
+iptables -t nat -A POSTROUTING -p tcp -d 192.212.33.3 --dport 80 -j SNAT --to-source 192.212.4.3:80
+iptables -t nat -A POSTROUTING -p tcp -d 192.212.33.2 --dport 80 -j SNAT --to-source 192.212.4.3:80
 
 ###====================== Nomor 6 Request diredirect ========================###
 ```
 
 <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_HLl5tyxNHs.png?raw=true" width="500">
 
-Di mana ...
+Di mana baris pertama dan kedua mengatur Prerouting, sedangkan ketiga dan keempat mengatur postrouting, dengan rincian:
+
+IP Doriki : 192.212.4.3
+
+IP Jorge : 192.212.33.2
+
+IP MainGate : 192.212.33.3
 
 2. Lalu dikarenakan Maingate dan Jorge merupakan webserver, maka install apache  dan netcat, lalu start apache.
    
