@@ -447,7 +447,11 @@ iptables -A INPUT -s 192.212.0.0/22 -m time --timestart 00:00 --timestop 06:59 -
 iptables -A INPUT -s 192.212.0.0/22 -m time --timestart 15:01 --timestop 23:59 --weekdays Mon,Tue,Wed,Thu -j REJECT
 ```
 
-Di mana...
+Di mana,
+
+* -A INPUT : Saring paket yang masuk dari -s 192.212.8.0/25 subnet BLUENO dan -s 192.212.0.0/22 subnet CHIPER 
+* -m time --weekdays Fri,Sat,Sun : Pada pukul berapapun untuk hari Jumat, Sabtu dan Minggu 
+* -j REJECT : Tolak permintaan akses
 
 **Dokumentasi Uji Coba**
 
@@ -455,9 +459,7 @@ Di mana...
    
 2. <img src="" width="500">
 
-3. Jika di dalam range waktu maka akan tampil seperti gambar di bawah ini:
-
-<img src="" width="500">
+3. Pada Blueno lakukan ping ke IP Doriki
 
 4. Gunakan command di bawah ini jika ingin mengatur waktu linux
 
@@ -484,15 +486,15 @@ iptables -A INPUT -s 192.212.32.0/24 -m time --timestart 06:59 --timestop 15:01 
 ###=================== Nomer 5 Batas Akses Elena dan Fukurou ================###
 ```
 
-Di mana...
+Dikarenakan pada nomor 5 diminta untuk bisa diakses setiap, maka tidak perlu membuat batasan hari karena bisa diakses setiap hari.
 
 **Dokumentasi Uji Coba**
 
-1. Pada Elena lakukan ping ke IP Doriki, jika di luar waktu yang ditentukan akan tampil seperti gambar di bawah ini:
+1. Pada Elena lakukan ping ke IP Doriki
    
 <img src="" width="500">
 
-2. Jika di dalam range waktu maka akan tampil seperti gambar di bawah ini:
+2. Pada Fukurou
 
 <img src="" width="500">
 
