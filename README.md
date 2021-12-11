@@ -339,15 +339,23 @@ Konfigurasi Foosha menggunakan iptables, tetapi Luffy tidak ingin menggunakan MA
    
    Terlihat bahwa target MASQUERADE berhasil dihapus dan penulis berhasil menambahkan target SNAT dengan source IP 192.212.0.0/18 dan destination IP 192.168.122.71
    
-2. Uji coba dilakukan di Foosha dan Blueno dengan melakukan ping google.com
-
-  <img src="" width="500">
-  
-  <img src="" width="500">
-  
-  <img src="" width="500">
-  
-  <img src="" width="500">
+2. Uji coba dilakukan di setiap node client dengan melakukan ping google.com
+   
+   Chiper
+   
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/no1_pingGoogle/chrome_YTaItwPpyu.png" width="500">
+   
+   Blueno
+   
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/no1_pingGoogle/chrome_mseJwtRllf.png" width="500">
+   
+   Elena
+   
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/no1_pingGoogle/chrome_dunrKOQFeu.png" width="500">
+   
+   Fukurou
+   
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/no1_pingGoogle/chrome_utw04kuzHd.png" width="500">
 
 ## Soal 2
 
@@ -382,7 +390,7 @@ nmap -p 80 10.46.4.2
 nmap -p 80 10.46.4.3
 ```
 
-<img src="" width="500">
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_Kpfakpq9iy.png" width="500">
 
 
 ## Soal 3
@@ -422,10 +430,21 @@ Lakukan ping ke IP milik Doriki/Jipangu pada 4 node yang berbeda. Di mana nantin
 ping 192.212.4.2
 ping 192.212.4.3
 ```
+Ping ke Jipangu
 
-<img src="" width="500">
+ <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_gnzTZ7aqAv.png" width="500">
+ <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_Ba8p5Vsx4c.png" width="500">
+ <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_FQaqTnCKQ5.png" width="500">
+ <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_TwpC1Z4II4.png" width="500">
 
-## No 4
+Ping ke Doriki
+
+ <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_9DI6ubxpwE.png" width="500">
+ <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_GTteCUegDc.png" width="500">
+ <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_VWnzqcHBX5.png" width="500">
+ <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_i6I88hKO8e.png" width="500">
+ 
+## Soal 4
 
 **Soal**
 
@@ -463,15 +482,17 @@ Di mana,
 
 1. Pada Cipher lakukan ping ke IP Doriki 
    
-2. <img src="" width="500">
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_t3lvqkRvIs.png" width="500">
 
-3. Pada Blueno lakukan ping ke IP Doriki
+2. Pada Blueno lakukan ping ke IP Doriki
 
-4. Gunakan command di bawah ini jika ingin mengatur waktu linux
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_Rcx696E3rc.png" width="500">
 
-```date --set="2021-12-04 20:00:00.00"```
+3. Gunakan command di bawah ini jika ingin mengatur waktu linux
 
-## No 5
+   ```date --set="2021-12-04 20:00:00.00"```
+
+## Soal 5
 
 **Soal**
 
@@ -498,20 +519,21 @@ Dikarenakan pada nomor 5 diminta untuk bisa diakses setiap, maka tidak perlu mem
 
 1. Pada Elena lakukan ping ke IP Doriki
    
-<img src="" width="500">
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_bmIQEtGIRs.png" width="500">
 
 2. Pada Fukurou
 
-<img src="" width="500">
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_auNVngI33B.png" width="500">
 
 3. Gunakan command di bawah ini jika ingin mengatur waktu linux
 
-```Date --set="2021-12-04 14:00:00.00```
+   ```Date --set="2021-12-04 14:00:00.00```
 
 
-## No 06
+## Soal 6
 
 **Soal**
+
 Karena kita memiliki 2 Web Server, Luffy ingin Guanhao disetting sehingga setiap request dari client yang mengakses DNS Server akan didistribusikan secara bergantian pada Jorge dan Maingate
 
 **Jawab**
