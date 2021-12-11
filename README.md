@@ -611,10 +611,10 @@ nc -l -p 80
 3. Pada Elena atau Fukurou kita kirimkan paket ke Doriki lewat port 80 dengan command di bawah ini:
 
 ```
-nc 10.46.4.2 80
+nc 192.212.4.2 80
 ```
 
-Di mana 10.46.4.2 merupakan IP dari Jipangu (DHCP Server).
+Di mana 192.212.4.2 merupakan IP dari Jipangu (DHCP Server).
 
 4. Kemudian coba testing kirim pesan beberapa kata pada Client
 
