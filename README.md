@@ -327,10 +327,21 @@ Konfigurasi Foosha menggunakan iptables, tetapi Luffy tidak ingin menggunakan MA
 
 **Dokumentasi Uji Coba**
 
-Uji coba dilakukan di Foosha dan Blueno dengan melakukan ping google.com
+1. Hasil running jawab.sh pada Foosha
+   
+   <img src="https://github.com/Herwindams24/Jarkom-Modul-5-T2-2021/blob/main/image/chrome_FCcSEXfEcg.png?raw=true" width="300">
+   
+   Terlihat bahwa target MASQUERADE berhasil dihapus dan penulis berhasil menambahkan target SNAT dengan source IP 192.212.0.0/18 dan destination IP 192.168.122.71
+   
+2. Uji coba dilakukan di Foosha dan Blueno dengan melakukan ping google.com
 
-<img src="" width="300">
-
+  <img src="" width="500">
+  
+  <img src="" width="500">
+  
+  <img src="" width="500">
+  
+  <img src="" width="500">
 
 ## Soal 2
 
